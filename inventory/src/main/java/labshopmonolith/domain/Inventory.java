@@ -28,5 +28,13 @@ public class Inventory {
         );
         return inventoryRepository;
     }
+
+    //<<< Clean Arch / Port Method
+    public void decreaseStock(DecreaseStockCommand decreaseStockCommand) {
+        //implement business logic here:
+
+    }
+    //>>> Clean Arch / Port Method
+
 }
 //>>> DDD / Aggregate Root

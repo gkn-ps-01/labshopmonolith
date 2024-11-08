@@ -5,8 +5,8 @@ import Router from 'vue-router'
 Vue.use(Router);
 
 
-import MonolithOrderManager from "./components/listers/MonolithOrderCards"
-import MonolithOrderDetail from "./components/listers/MonolithOrderDetail"
+import OrderOrderManager from "./components/listers/OrderOrderCards"
+import OrderOrderDetail from "./components/listers/OrderOrderDetail"
 
 import InventoryInventoryManager from "./components/listers/InventoryInventoryCards"
 import InventoryInventoryDetail from "./components/listers/InventoryInventoryDetail"
@@ -17,14 +17,14 @@ export default new Router({
     base: process.env.BASE_URL,
     routes: [
             {
-                path: '/monoliths/orders',
-                name: 'MonolithOrderManager',
-                component: MonolithOrderManager
+                path: '/orders/orders',
+                name: 'OrderOrderManager',
+                component: OrderOrderManager
             },
             {
-                path: '/monoliths/orders/:id',
-                name: 'MonolithOrderDetail',
-                component: MonolithOrderDetail
+                path: '/orders/orders/:id',
+                name: 'OrderOrderDetail',
+                component: OrderOrderDetail
             },
 
             {

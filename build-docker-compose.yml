@@ -23,7 +23,7 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
 
-  monolith:
+  order:
     depends_on: 
       - kafka
     image: adoptopenjdk/maven-openjdk11:latest
@@ -34,7 +34,7 @@ services:
       - 8082:8082
     working_dir: /usr/src
     volumes:
-      - ./monolith:/usr/src
+      - ./order:/usr/src
       - ./maven-repo:/root/.m2
       
   inventory:

@@ -5,6 +5,7 @@
         </v-card-title>
 
         <v-card-text>
+            <Number label="Qty" v-model="value.qty" :editMode="editMode"/>
         </v-card-text>
 
         <v-card-actions>
@@ -40,6 +41,7 @@
             value: {},
         }),
         created() {
+            this.value.qty = 0;
         },
         watch: {
         },

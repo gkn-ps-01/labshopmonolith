@@ -37,7 +37,7 @@
                     <v-list-item
                         class="px-2"
                         key="orders"
-                        to="/monoliths/orders"
+                        to="/orders/orders"
                         @click="changeUrl()"
                         color="primary"
                         style="font-weight:700;"
@@ -140,7 +140,7 @@ export default {
                 title: 'Order', 
                 description: '', 
                 key: 'orders', 
-                route: '/monoliths/orders',
+                route: '/orders/orders',
                 ImageUrl: '',
             },
             { 

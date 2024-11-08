@@ -3,22 +3,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: monolith
+  name: order
   labels:
-    app: monolith
+    app: order
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: monolith
+      app: order
   template:
     metadata:
       labels:
-        app: monolith
+        app: order
     spec:
       containers:
-        - name: monolith
-          image: username/monolith:latest
+        - name: order
+          image: username/order:latest
           ports:
             - containerPort: 8080
           readinessProbe:
@@ -85,15 +85,15 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: monolith
+  name: order
   labels:
-    app: monolith
+    app: order
 spec:
   ports:
     - port: 8080
       targetPort: 8080
   selector:
-    app: monolith
+    app: order
 
 
 ---

@@ -19,27 +19,5 @@ public class OrderController {
 
     @Autowired
     OrderRepository orderRepository;
-
-    @RequestMapping(
-        value = "/orders/{id}/test",
-        method = RequestMethod.PUT,
-        produces = "application/json;charset=UTF-8"
-    )
-    public Order test(
-        @PathVariable(value = "id") Long id,
-        @RequestBody TestCommand testCommand,
-        HttpServletRequest request,
-        HttpServletResponse response
-    ) throws Exception {
-        System.out.println("##### /order/test  called #####");
-        Optional<Order> optionalOrder = orderRepository.findById(id);
-
-        optionalOrder.orElseThrow(() -> new Exception("No Entity Found"));
-        Order order = optionalOrder.get();
-        order.test(testCommand);
-
-        orderRepository.save(order);
-        return order;
-    }
 }
 //>>> Clean Arch / Inbound Adaptor

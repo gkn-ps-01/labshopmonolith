@@ -9,6 +9,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @FeignClient(name = "inventory", url = "${api.url.inventory}")
 public interface InventoryService {
-    @RequestMapping(method = RequestMethod.POST, path = "/inventories")
-    public void decreaseStock(@RequestBody Inventory inventory);
+    @RequestMapping(
+        method = RequestMethod.PUT,
+        path = "/inventories/{id}/decreasestock"
+    )
+    public void decreaseStock(
+        @PathVariable("id") Long id,
+        @RequestBody DecreaseStockCommand decreaseStockCommand
+    );
 }
